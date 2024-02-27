@@ -10,7 +10,13 @@ class TrainController extends Controller
 {
     public function index()
     {
-        $todayTrains = Train::whereDate('departure_time', '>=', Carbon::today()->toDateString())->get();
-        return view('home', compact('todayTrains'));
+        // Ottieni la data odierna
+        $today = Carbon::today()->toDateString();
+
+        // Seleziona i treni con la data del biglietto uguale alla data odierna
+        $todayTrains = Train::whereDate('ticket_date', '=', $today)->get();
+        $todayDate = Carbon::now()->toFormattedDateString();
+
+        return view('home', compact('todayTrains', 'todayDate'));
     }
 }

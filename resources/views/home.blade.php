@@ -5,6 +5,9 @@
 @section('main-content')
 
 <div class="container">
+    <div class="bg-warning-subtle mb-5">
+        <h2 class="text-primary text-center py-3">Train Schedule for Today: {{ $todayDate }}</h2>
+    </div>
     <div class="row">
         @foreach ($todayTrains as $train)
             <div class="col-md-4">
@@ -15,6 +18,7 @@
                             <p class="card-text">From: {{ $train->departure_station }} at {{ $train->departure_time }}</p>
                             <p class="card-text">To: {{ $train->arrival_station }} at {{ $train->arrival_time }}</p>
                             <p class="card-text">Status: {{ $train->on_time ? 'On Time' : 'Delayed' }}{{ $train->cancelled ? ', Cancelled' : '' }}</p>
+                            <p class="card-text">Date: {{ $train->ticket_date }}</p>
                         </div>
 
                         <div class="button-container py-3">
