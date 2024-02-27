@@ -1,39 +1,10 @@
-@php
-    $links = [
-        [
-            'url' => '/',
-            'label' => 'Home',
-            'active' => true,
-        ],
-        [
-            'url' => '/chi-siamo',
-            'label' => 'Chi siamo',
-            'active' => true,
-        ],
-        [
-            'url' => '/contatti',
-            'label' => 'Contatti',
-            'active' => false,
-        ],
-    ];
-@endphp
-
 <header>
-    <nav>
-        <ul>
-            @foreach ($links as $link)
-                <li>
-                    @if ($link['active'])
-                        <a href="{{ $link['url'] }}">
-                            {{ $link['label'] }}
-                        </a>
-                    @else
-                        <del>
-                            {{ $link['label'] }}
-                        </del>
-                    @endif
-                </li>
-            @endforeach
-        </ul>
-    </nav>
+
+    <div>
+        <h1>
+            <h1 class="mb-4">Train Schedule for Today</h1>
+        </h1>
+    </div>
+
+
 </header>
