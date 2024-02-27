@@ -1,5 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
-
+/*
 main {
     background-color: lightcoral;
 }
@@ -12,4 +12,13 @@ main {
     height: 200px;
     background-image: url('../img/gatto.webp');
     background-size: contain;
+}
+*/
+
+.card {
+    height: 270px;
+
+    .card-title {
+        height: 50px;
+    }
 }
